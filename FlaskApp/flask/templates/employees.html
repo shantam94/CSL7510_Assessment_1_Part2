@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    table , th , td {
+      border: 2px solid black;
+    }
+    form {
+          text-align: center;
+        }
+  </style>
+  <head>
+    <title>Employee Data</title>
+  </head>
+
+  <body>
+    <h2>
+
+      Please use the refresh button to randomly get 10 lucky employees for bonus prommotion!
+
+    </h2>
+
+      <div class="row marketing">
+            <table style = "100%">
+     <thead>
+      <tr>
+        <th>FIRST_NAME</th>
+        <th>HIRE_DATE</th>
+        <th>EMAIL</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+            <tr>
+              <td>{{ employee.FIRST_NAME }}</td>
+              <td>{{ employee.HIRE_DATE }}</td>
+              <td>{{ employee.EMAIL }}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+            </table>
+      </div>
+    <div class = "wrapper">
+      <form method="post" action="/employees">
+        <input type="submit" value="REFRESH" name="action"/>
+    </form>
+    </div>
+    </div>
+  </body>
+</html>
