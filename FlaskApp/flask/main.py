@@ -11,27 +11,6 @@ def index():
 @app.route('/employees',methods=['GET', 'POST'])
 def main():
     if request.method == 'POST':
-        # connection = sql.connect(
-        #                         host = '192.168.100.5',
-        #                         user = 'shantam',
-        #                         password = '123',
-        #                         port = '3306',
-        #                         auth_plugin = 'mysql_native_password',
-        #                         database = 'DEMO_DB'
-        #                         )
-        # query = 'SELECT * from EMPLOYEES'
-
-        # with connection.cursor() as cursor:
-        #     cursor.execute(query)
-        #     res = cursor.fetchall()
-        #     final = []
-        #     for row in res:
-        #         record = {
-        #             'name': row[0],
-        #             'year_of_join' : row[1],
-        #             'city' : row[2]
-        #         }
-        #         final.append(record)
         data = pd.read_csv('employees.csv')
         cols = ['FIRST_NAME', 'HIRE_DATE', 'EMAIL']
         data = data[cols]
